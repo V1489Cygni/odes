@@ -96,7 +96,7 @@ public class Visualiser {
                 targetDisplayMode = new DisplayMode(width, height);
             }
             if (targetDisplayMode == null) {
-                System.out.println("Failed to find value mode: " + width + "x" + height + " fs=" + fullscreen);
+                System.out.println("Failed to find value mode: " + width + "x" + height + " fs=" + true);
                 return;
             }
             Display.setDisplayMode(targetDisplayMode);

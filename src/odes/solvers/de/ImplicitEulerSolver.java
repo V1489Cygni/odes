@@ -19,8 +19,6 @@ public class ImplicitEulerSolver extends DESolver {
         int n = system.getSize();
         ((EDESystem) system).solve(lastX, lastY, step, result);
         lastX += step;
-        for (int i = 0; i < n; i++) {
-            lastY[i] = result[i];
-        }
+        System.arraycopy(result, 0, lastY, 0, n);
     }
 }

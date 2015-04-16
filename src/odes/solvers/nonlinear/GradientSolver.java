@@ -35,8 +35,4 @@ public class GradientSolver extends NonLinearSolver {
         }
         return x;
     }
-
-    public void setLambda(double lambda) {
-        this.lambda = lambda;
-    }
 }

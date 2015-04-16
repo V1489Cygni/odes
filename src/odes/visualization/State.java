@@ -17,7 +17,7 @@ public class State {
     private double[] x, y, z;
 
     public State(double[] x, double[] y, double[] z) throws IOException {
-        camera = new Camera(0, 0, 0, 10, 0, 180);
+        camera = new Camera(7, -5, 15, 0, 15, 160);
         this.x = x;
         this.y = y;
         this.z = z;
@@ -45,6 +45,12 @@ public class State {
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
             camera.moveUp(-delta / 100f);
+        }
+        if (Keyboard.isKeyDown(Keyboard.KEY_LBRACKET)) {
+            camera.changeSpeed(false);
+        }
+        if (Keyboard.isKeyDown(Keyboard.KEY_RBRACKET)) {
+            camera.changeSpeed(true);
         }
         if (Mouse.isButtonDown(0)) {
             if (mouseLastDown) {

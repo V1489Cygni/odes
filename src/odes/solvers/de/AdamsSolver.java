@@ -43,9 +43,7 @@ public class AdamsSolver extends DESolver {
                 }
             }
             lastX[3] = lastX[2] + step;
-            for (int i = 0; i < n; i++) {
-                lastY[3][i] = nextY[i];
-            }
+            System.arraycopy(nextY, 0, lastY[3], 0, n);
             system.evaluate(lastX[3], lastY[3], f[3]);
             for (int i = 0; i < n; i++) {
                 result[i] = lastY[2][i] + step * (9 * f[3][i] + 19 * f[2][i] - 5 * f[1][i] + f[0][i]) / 24;
